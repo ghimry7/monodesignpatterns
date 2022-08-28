@@ -1,0 +1,24 @@
+package com.monocept.model;
+
+public class ProxyGame implements gameApp{
+
+	private Game game;
+	private String gameName;
+	
+	
+	
+	public ProxyGame(String gameName) {
+		this.gameName = gameName;
+	}
+
+
+
+	@Override
+	public void displaying() {
+		if(game==null){
+			game=new Game(gameName);
+		}
+		System.out.println("Displaying "+gameName);
+	}
+
+}
